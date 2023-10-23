@@ -37,7 +37,7 @@ public class Graph{
 	
 		
 	
-		System.setProperty("webdriver.chrome.driver", "/Users/elahigill/Downloads/chromedriver-mac-arm64/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\sange\\eclipse-workspace_san\\Ds-Algo-Ninja-patels-\\src\\test\\resources\\driver\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.get("https://dsportalapp.herokuapp.com/");
 		driver.findElement(getstarted).click();

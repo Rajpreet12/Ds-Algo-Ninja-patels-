@@ -37,7 +37,7 @@ public class Stack {
 
 		@Given("The user is in the Stack page after logged in")
 		public void the_user_is_in_the_stack_page_after_logged_in() {
-			System.setProperty("webdriver.chrome.driver", "/Users/elahigill/Downloads/chromedriver-mac-arm64/chromedriver");
+			System.setProperty("webdriver.chrome.driver", "C:\\Users\\sange\\eclipse-workspace_san\\Ds-Algo-Ninja-patels-\\src\\test\\resources\\driver\\chromedriver.exe");
 			driver = new ChromeDriver();
 			
 			driver.get(URL);
@@ -137,6 +137,7 @@ public class Stack {
 		public void the_user_should_be_in_directed_to_queue_page() {
 			
 			driver.findElement(queue).click();
+			driver.close();
 		}
 
 
