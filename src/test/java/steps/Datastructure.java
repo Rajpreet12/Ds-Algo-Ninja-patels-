@@ -1,4 +1,3 @@
-
 package steps;
 
 import java.time.Duration;
@@ -34,10 +33,10 @@ public class Datastructure {
 		
 		
 		
-		@Before
+		
 		@Given("user already sigin")
 		public void user_already_sigin() {
-			 System.setProperty("webdriver.chrome.driver", "/Users/elahigill/Downloads/chromedriver-mac-arm64/chromedriver");
+			 System.setProperty("webdriver.chrome.driver", "C:\\Users\\sange\\eclipse-workspace_san\\Ds-Algo-Ninja-patels-\\src\\test\\resources\\driver\\chromedriver.exe");
 		        driver = new ChromeDriver();
 		       
 				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -73,7 +72,7 @@ public class Datastructure {
 		driver.navigate().back();
 	    
 	}
-    @After
+   
 	@Then("The user  clicks Try here button")
 	public void the_user_clicks_try_here_button() {
 		driver.findElement(tryhere).click();
@@ -84,7 +83,8 @@ public class Datastructure {
 		    action.click(ght).sendKeys("print('Hello')").perform();  
 
 		    driver.findElement(run).click();
-		    driver.navigate().back();
+		   // driver.navigate().back();
+		    driver.close();
 		
 	   
 	}

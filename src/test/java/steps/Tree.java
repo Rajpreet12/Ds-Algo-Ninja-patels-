@@ -58,7 +58,7 @@ By  pq=By.xpath("//a[normalize-space()='Practice Questions']");
 private WebDriver driver;
 @Given("user logged in and get started button")
 	public void user_logged_in_and_get_started_button() {
-		System.setProperty("webdriver.chrome.driver", "/Users/elahigill/Downloads/chromedriver-mac-arm64/chromedriver");
+	System.setProperty("webdriver.chrome.driver", "C:\\Users\\sange\\eclipse-workspace_san\\Ds-Algo-Ninja-patels-\\src\\test\\resources\\driver\\chromedriver.exe");
         driver = new ChromeDriver();
        
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -341,6 +341,7 @@ private WebDriver driver;
 	@Then("The user clicks practice Question button")
 	public void the_user_clicks_practice_question_button() {
 		driver.findElement(pq).click();
+		driver.close();
 
 
 }

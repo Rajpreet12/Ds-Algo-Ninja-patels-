@@ -6,12 +6,12 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
-			plugin= {"pretty","html:target/rajpreetgill.html"},
+			plugin= {"pretty","html:target/sange.html"},
 			monochrome=false,
-			tags="@tag ",
+			tags="@tag",
 			features= {"src/test/resources/features"},
-			glue = {"steps" } 
-			)
+			glue = "steps") 
+			
 	public class Runner  extends AbstractTestNGCucumberTests{
 		@Override
 		@DataProvider(parallel=false)

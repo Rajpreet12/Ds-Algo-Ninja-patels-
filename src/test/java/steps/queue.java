@@ -1,4 +1,5 @@
 package steps;
+
 import java.time.Duration;
 
 import org.openqa.selenium.By;
@@ -22,13 +23,17 @@ public class queue {
 	By login = By.xpath("//div[@class=\"container\"]/div/div[2]/form/input[4]");
 	By qGetstrBtn = By.xpath("//div[@class=\"row row-cols-1 row-cols-md-3 g-4\"]/div[5]/div/div/a");
 	By ImplofQLnk = By.linkText("Implementation of Queue in Python");
-	By tryHere = By.linkText("Try here>>>");
+	By tryHere1 = By.linkText("Try here>>>");
+	By codeMirr = By.xpath("//div[@class=\"CodeMirror-scroll\"]/div[1]/div/div/div/div[4]");
+	By impUsngArr = By.linkText("Implementation using array");
 	By impusingCollecs = By.linkText("Implementation using collections.deque");
 	By pracQstnsLnk = By.linkText("Practice Questions");
+	By runBtn = By.xpath("//div[@class=\"container\"]/div/form/button");
+	
 	@Given("The user is in the Queue page after logged in")
 	public void the_user_is_in_the_queue_page_after_logged_in() {
-		 driver = new ChromeDriver();
-		 System.setProperty("webdriver.chrome.driver", "/Users/elahigill/Downloads/chromedriver-mac-arm64/chromedriver");
+		    driver = new ChromeDriver();
+		    System.setProperty("webdriver.chrome.driver", "C:\\Users\\sange\\eclipse-workspace_san\\Ds-Algo-Ninja-patels-\\src\\test\\resources\\driver\\chromedriver.exe");
 	       	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 			driver.manage().window().maximize();
 			driver.get(URL);
@@ -47,7 +52,7 @@ public class queue {
 
 	@When("The user clicks Try Here button on Implementation of Queue in Python page")
 	public void the_user_clicks_try_here_button_on_implementation_of_queue_in_python_page() {
-		driver.findElement(tryHere).click();
+		driver.findElement(tryHere1).click();
 	}
 
 	@When("clicks on Implementation using collections user should be redirected to Implementation using collections page")
@@ -57,25 +62,25 @@ public class queue {
 
 	@When("The user clicks Try Here button on Implementation using collections page")
 	public void the_user_clicks_try_here_button_on_implementation_using_collections_page() {
-		driver.findElement(By.linkText("Try here>>>")).click();
+		driver.findElement(tryHere1).click();
 	}
 
 	@When("clicks on Implementation using array user should be redirected to Implementation using array page")
 	public void clicks_on_implementation_using_array_user_should_be_redirected_to_implementation_using_array_page() {
-		 driver.findElement(By.linkText("Implementation using array")).click();
+		 driver.findElement(impUsngArr).click();
 	}
 
 	@When("The user clicks Try Here button on Implementation using array page")
 	public void the_user_clicks_try_here_button_on_implementation_using_array_page() {
-		driver.findElement(By.linkText("Try here>>>")).click();
+		driver.findElement(tryHere1).click();
 	}
 
 	@Then("The user should be redirected to a page having a tryEditor with a Run button to test1")
 	public void the_user_should_be_redirected_to_a_page_having_a_tryeditor_with_a_run_button_to_test1() {
 		Actions action = new Actions(driver);
-	    WebElement txt1 = driver.findElement(By.xpath("//div[@class=\"CodeMirror-scroll\"]/div[1]/div/div/div/div[4]"));
+	    WebElement txt1 = driver.findElement(codeMirr);
 	    action.click(txt1).sendKeys("print('Hello')").perform(); 
-	    driver.findElement(By.xpath("//div[@class=\"container\"]/div/form/button")).click();
+	    driver.findElement(runBtn).click();
 	    driver.close();
 	}
 	    @When("clicks on Queue Operations user should be redirected to Queue Operations page")
@@ -85,14 +90,15 @@ public class queue {
 
 	@When("The user clicks Try Here button on Queue Operations page")
 	public void the_user_clicks_try_here_button_on_queue_operations_page() {
-		driver.findElement(By.linkText("Try here>>>")).click();
+		driver.findElement(tryHere1).click();
 	}
 	@Then("The user should be redirected to a page having a tryEditor with a Run button to test2")
 	public void the_user_should_be_redirected_to_a_page_having_a_tryeditor_with_a_run_button_to_test2() {
 		Actions action = new Actions(driver);
-	    WebElement txt1 = driver.findElement(By.xpath("//div[@class=\"CodeMirror-scroll\"]/div[1]/div/div/div/div[4]"));
+	    WebElement txt1 = driver.findElement(codeMirr);
 	    action.click(txt1).sendKeys("print('Hello')").perform(); 
-	    driver.findElement(By.xpath("//div[@class=\"container\"]/div/form/button")).click();
+	    driver.findElement(runBtn).click();
+	    
 	    
 	}	
 	@Given("The user navigates back to Queue Operations page and clicks on Practice Questions")

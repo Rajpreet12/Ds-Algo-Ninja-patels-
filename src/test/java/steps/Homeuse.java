@@ -26,7 +26,7 @@ public class Homeuse {
     
 	@Given("The user opens DS-Algo portal link")
 	public void the_user_opens_ds_algo_portal_link() {
-		 System.setProperty("webdriver.chrome.driver", "/Users/elahigill/Downloads/chromedriver-mac-arm64/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\sange\\eclipse-workspace_san\\Ds-Algo-Ninja-patels-\\src\\test\\resources\\driver\\chromedriver.exe");
 	        driver = new ChromeDriver();
 	       
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -80,6 +80,7 @@ public class Homeuse {
 	@Then("It should alert the user with a message You are not Logged in.")
 	public void it_should_alert_the_user_with_a_message_you_are_not_logged_in() {
 	    driver.findElement(alert);
+	    driver.close();
 	    
 }
 }
