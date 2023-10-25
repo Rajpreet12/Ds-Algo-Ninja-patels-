@@ -33,14 +33,14 @@ public class Linklist {
      By traversal=By.xpath("//a[normalize-space()='Traversal']");
 	 By insertion=By.linkText("Insertion");
 	 By deletion = By.linkText("Deletion");
-	 By practiseqa=By.xpath("//a[@class='list-group-item list-group-item-light text-info']");
+	 By practiseqa=By.xpath("//a[normalize-space()='Practice Questions']");
 	 By datastructures=By.xpath("//a[@class='nav-link dropdown-toggle']");
 	 By Stack=By.xpath("//a[normalize-space()='Stack']");
 	 
 	 
 	@Given("The user is in the Linkedlist page after loggedin")
 	public void the_user_is_in_the_linkedlist_page_after_loggedin() {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\sange\\eclipse-workspace_san\\Ds-Algo-Ninja-patels-\\src\\test\\resources\\driver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "/Users/elahigill/Downloads/chromedriver-mac-arm64/chromedriver");
         
 		driver = new ChromeDriver();
 		driver.get(URL);
@@ -83,8 +83,7 @@ public class Linklist {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		   // driver.navigate().back();
-			driver.close();
+		    driver.navigate().back();
 	        
 	}
 
@@ -115,8 +114,7 @@ public class Linklist {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	   // driver.navigate().back();
-		driver.close();
+	    driver.navigate().back();
 	    
 	}
 
@@ -138,8 +136,7 @@ public class Linklist {
 	@Then("The user should be redirected to a page having an tryEditor with a Run button test2")
 	public void the_user_should_be_redirected_to_a_page_having_an_try_editor_with_a_run_button_test2() {
 		System.out.println("The user is redirected to a tryEditor page");
-	    //driver.navigate().back();
-		driver.close();
+	    driver.navigate().back();
 	}
 
 	@When("The user clicks Implement Linked List in Python button")
@@ -160,8 +157,7 @@ public class Linklist {
 	@Then("The user should be redirected to a page having an tryEditor with a Run button test3")
 	public void the_user_should_be_redirected_to_a_page_having_an_try_editor_with_a_run_button_test3() {
 		System.out.println("The user is redirected to a tryEditor page");
-	   //driver.navigate().back();
-		driver.close();
+	    driver.navigate().back();
 	}
 
 	@When("The user clicks Traversal button")
@@ -183,8 +179,7 @@ public class Linklist {
 	@Then("The user should be redirected to a page having an tryEditor with a Run button test4")
 	public void the_user_should_be_redirected_to_a_page_having_an_try_editor_with_a_run_button_test4() {
 		System.out.println("The user is redirected to a tryEditor page");
-		//driver.navigate().back();
-		driver.close();
+		driver.navigate().back();
 	}
 
 	@When("The user clicks Insertion button")
@@ -205,8 +200,7 @@ public class Linklist {
 	@Then("The user should be redirected to a page having an tryEditor with a Run button test5")
 	public void the_user_should_be_redirected_to_a_page_having_an_try_editor_with_a_run_button_test5() {
 		System.out.println("The user is redirected to a tryEditor page");
-		//driver.navigate().back();
-		driver.close();
+		driver.navigate().back();
 	}
 
 	@When("The user clicks Deletion button")
@@ -230,15 +224,13 @@ public class Linklist {
 		System.out.println("The user is redirected to a tryEditor page");
 		driver.navigate().back();
 	}
-
-	@When("The user clicks Practise Questions button")
-	public void the_user_clicks_practise_questions_button() {
-		driver.findElement(practiseqa).click();
-		driver.close();
-		
-	}
-
-
-
-
 }
+
+	
+
+
+
+
+
+	
+	
