@@ -42,7 +42,7 @@ By sqrsOfSrtdArrLnk = By.xpath("//a[text()=\"Squares of  a Sorted Array\"]");
 @Given("The user is in the Array page after logged in")
 public void the_user_is_in_the_array_page_after_logged_in() {
 	driver = new ChromeDriver();
-	System.setProperty("webdriver.chrome.driver", "C:\\Users\\sange\\eclipse-workspace_san\\Ds-Algo-Ninja-patels-\\src\\test\\resources\\driver\\chromedriver.exe");
+	System.setProperty("webdriver.chrome.driver", "C:\\Users\\sange\\eclipse-workspace_san\\DSAlgo-NJ-Petals-San\\src\\test\\resources\\driver\\chromedriver.exe");
    	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	driver.manage().window().maximize();
 	driver.get(URL);
@@ -157,4 +157,3 @@ public void the_user_clicks_squares_of_a_sorted_array_link() {
 	driver.close();
 }
 }
-
