@@ -1,3 +1,5 @@
+
+	
 package steps;
 
 import java.time.Duration;
@@ -25,18 +27,19 @@ public class Datastructure {
 		By username=By.xpath("//input[@name=\"username\"]");
 		By password=By.xpath("//input[@name=\"password\"]");
 		By signinpage=By.xpath("//input[@type=\"submit\"]");
-		By practice=By.linkText("Practice Questions");
-		By tryhere=By.xpath("//a[@class=\"btn btn-info\"]");
+		
 		By time=By.linkText("Time Complexity");
+	    By tryhere=By.xpath("//a[normalize-space()='Try here>>>']");
 		By presentation=By.xpath("//div[@class=\"CodeMirror-scroll\"]");
 		By run=By.xpath("//button[@type=\"button\"]");
+		By practice=By.linkText("Practice Questions");
 		
 		
 		
 		
 		@Given("user already sigin")
 		public void user_already_sigin() {
-			 System.setProperty("webdriver.chrome.driver", "C:\\Users\\sange\\eclipse-workspace_san\\Ds-Algo-Ninja-patels-\\src\\test\\resources\\driver\\chromedriver.exe");
+			 System.setProperty("webdriver.chrome.driver", "/Users/elahigill/Downloads/chromedriver-mac-arm64/chromedriver");
 		        driver = new ChromeDriver();
 		       
 				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -62,18 +65,11 @@ public class Datastructure {
 	@When("The user clicks Time complexity button")
 	public void the_user_clicks_time_complexity_button() {
 		driver.findElement(time).click();
-		//System.out.println("print('Hello, world!')");
+		
 		
 	}
 
-	@When("The user clicks the practice button")
-	public void the_user_clicks_the_practice_button() {
-		driver.findElement(practice).click();
-		driver.navigate().back();
-	    
-	}
-   
-	@Then("The user  clicks Try here button")
+	@When("The user  clicks Try here button")
 	public void the_user_clicks_try_here_button() {
 		driver.findElement(tryhere).click();
 		driver.findElement(presentation);
@@ -83,11 +79,16 @@ public class Datastructure {
 		    action.click(ght).sendKeys("print('Hello')").perform();  
 
 		    driver.findElement(run).click();
-		   // driver.navigate().back();
-		    driver.close();
-		
-	   
+		    driver.navigate().back();
 	}
+
+		@Then("The user clicks the practice button")
+		public void the_user_clicks_the_practice_button() {
+			driver.findElement(practice).click();
+			driver.navigate().back();
+			driver.close();
+	}
+		
 
 
 }
